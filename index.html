@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>แจ้งให้หน่อยนะDru - ระบบรับเรื่องร้องเรียนนักศึกษา</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#002113","surface-dim":"#cfdaf2","tertiary-container":"#00855b","surface-container-lowest":"#ffffff","secondary-container":"#fea619","error-container":"#ffdad6","surface-container-highest":"#d8e3fb","surface-tint":"#006c4a","surface-bright":"#f9f9ff","on-background":"#111c2d","tertiary-fixed":"#6ffbbe","outline":"#6d7a72","on-tertiary-container":"#f5fff6","on-primary":"#ffffff","outline-variant":"#bccac0","on-secondary-fixed":"#2a1700","on-error":"#ffffff","primary-fixed":"#85f8c4","surface-variant":"#d8e3fb","secondary-fixed-dim":"#ffb95f","primary-fixed-dim":"#68dba9","on-primary-container":"#f5fff7","on-secondary-container":"#684000","surface-container-high":"#dee8ff","surface":"#f9f9ff","tertiary":"#006947","on-primary-fixed-variant":"#005137","on-surface-variant":"#3d4a42","secondary-fixed":"#ffddb8","inverse-primary":"#68dba9","on-primary-fixed":"#002114","error":"#ba1a1a","on-tertiary-fixed-variant":"#005236","on-tertiary":"#ffffff","secondary":"#855300","inverse-surface":"#263143","on-error-container":"#93000a","tertiary-fixed-dim":"#4edea3","on-surface":"#111c2d","background":"#f9f9ff","on-secondary-fixed-variant":"#653e00","surface-container":"#e7eeff","surface-container-low":"#f0f3ff","on-secondary":"#ffffff","primary-container":"#00855d","primary":"#006948","inverse-on-surface":"#ecf1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"3rem","space-2xl":"3rem","space-sm":"0.75rem","margin":"1rem","gutter":"1.25rem","gutter-desktop":"1.75rem","space-md":"1rem","space-2xs":"0.25rem","space-xl":"2rem","space-lg":"1.5rem","space-xs":"0.5rem","margin-tablet":"2rem"},"fontFamily":{"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Be Vietnam Pro"],"label-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-xl flex-shrink-0"><a class="flex items-center gap-space-sm group text-left" data-path="home" href="#"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight group-hover:text-primary-container transition-colors">แจ้งให้หน่อยนะDru</span><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase font-semibold">DRU Campus Care</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg px-space-sm py-space-xs shadow-sm"><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="home" href="#">หน้าแรก</a><a aria-current="page" class="transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg px-space-sm py-space-xs shadow-sm" data-path="report-issue" href="#">แจ้งปัญหา</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="track-status" href="#">ติดตามสถานะ</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="analytics-and-resolved" href="#">สถิติ &amp; ปัญหาที่แก้ไขแล้ว</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden md:flex items-center relative"><span class="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">search</span><input class="w-48 lg:w-60 pl-9 pr-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="ค้นหาปัญหาหรือรหัสติดตาม..." type="text"/></div><button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="ช่วยเหลือด่วน" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><button class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="การแจ้งเตือน" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-outline-variant/30"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">นายพิชญะ วงศ์สวัสดิ์</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">นักศึกษา • คณะวิทยาการจัดการ</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Hero Banner Card -->
+<section class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary shadow-xl p-8 lg:p-12 mb-8">
+<div class="absolute -right-16 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-1/4 w-56 h-56 rounded-full bg-primary-fixed/15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-5">
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-on-primary font-label-md text-label-md tracking-wide">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+        ระบบรับเรื่องร้องเรียนและข้อเสนอแนะนักศึกษา มรธ.
+      </div>
+<div class="flex flex-col gap-2">
+<h1 class="font-display-lg text-display-lg leading-tight tracking-tight text-on-primary">
+          มีปัญหาอะไรในรั้วมหา'ลัย <br class="hidden sm:inline"/>
+<span class="text-secondary-fixed">แจ้งให้ Dru ดูแลได้เลย!</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-2xl leading-relaxed">
+          ศูนย์รับเรื่องและประสานงานแก้ไขปัญหาสำหรับชาวราชภัฏธนบุรี รวดเร็ว โปร่งใส ตรวจสอบสถานะได้ทุกขั้นตอนอย่างเป็นรูปธรรม
+        </p>
+</div>
+<!-- Quick stats badges -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-lowest/15 backdrop-blur-sm text-on-primary font-label-md text-label-md shadow-sm">
+<span class="text-secondary-fixed text-base">⚡</span>
+<span>ตรวจสอบเบื้องต้นภายใน 24 ชม.</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-lowest/15 backdrop-blur-sm text-on-primary font-label-md text-label-md shadow-sm">
+<span class="text-primary-fixed text-base">✅</span>
+<span>แก้ไขเสร็จสิ้นแล้วกว่า 1,280 รายการ</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-lowest/15 backdrop-blur-sm text-on-primary font-label-md text-label-md shadow-sm">
+<span class="text-secondary-fixed text-base">🛡️</span>
+<span>ข้อมูลปลอดภัยเป็นความลับตาม พ.ร.บ.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Grid Layout (65% Left, 35% Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Form Container (~65% -> 8 of 12 cols) -->
+<form class="lg:col-span-8 flex flex-col gap-8" id="issueReportForm" onsubmit="event.preventDefault();">
+<!-- SECTION 1: Student Identity -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-md flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-primary flex items-center justify-center font-headline-sm">
+<span class="material-symbols-outlined text-[24px]">badge</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">ข้อมูลผู้แจ้งเรื่อง</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">เลือกระดับการเปิดเผยข้อมูลเพื่อความสะดวกในการประสานงาน</p>
+</div>
+</div>
+<!-- Identity Segmented Control -->
+<div class="inline-flex p-1 rounded-xl bg-surface-container-low self-start sm:self-auto" id="identityToggleGroup">
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5 font-semibold" id="btnIdentified" onclick="setIdentityMode(true)" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+              ระบุตัวตน (แนะนำ)
+            </button>
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5" id="btnAnonymous" onclick="setIdentityMode(false)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+              ไม่ประสงค์ออกนาม
+            </button>
+</div>
+</div>
+<!-- Student Form Inputs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 transition-opacity duration-300" id="studentIdentityFields">
+<!-- Full Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span>ชื่อ - นามสกุล <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sync</span> ดึงจากระบบอัตโนมัติ
+              </span>
+</label>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all shadow-inner" type="text" value="นายพิชญะ วงศ์สวัสดิ์"/>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-primary text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Student ID -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+              รหัสนักศึกษา <span class="text-error">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md cursor-not-allowed opacity-90 shadow-inner" readonly="" type="text" value="65012345678"/>
+</div>
+<!-- Faculty -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+              คณะ / สังกัด <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all appearance-none pr-10">
+<option selected="" value="fms">คณะวิทยาการจัดการ (FMS)</option>
+<option value="edu">คณะครุศาสตร์ (EDU)</option>
+<option value="sci">คณะวิทยาศาสตร์และเทคโนโลยี (SCI)</option>
+<option value="hum">คณะมนุษยศาสตร์และสังคมศาสตร์ (HUSO)</option>
+<option value="ind">คณะเทคโนโลยีอุตสาหกรรม (IND)</option>
+<option value="grad">บัณฑิตวิทยาลัย</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Academic Year Radio Chips -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+              ชั้นปีการศึกษา <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="selectYear(1)" type="button">ปี 1</button>
+<button class="year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="selectYear(2)" type="button">ปี 2</button>
+<button class="year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary-container font-semibold shadow-sm transition-all" onclick="selectYear(3)" type="button">ปี 3</button>
+<button class="year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="selectYear(4)" type="button">ปี 4+</button>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+              เบอร์โทรศัพท์ติดต่อด่วน <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">call</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" placeholder="08X-XXX-XXXX" type="tel" value="089-123-4567"/>
+</div>
+</div>
+<!-- University Email -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+              อีเมลนักศึกษา (@dru.ac.th) <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-outline text-[18px]">alternate_email</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" placeholder="student@dru.ac.th" type="email" value="pittaya.w@dru.ac.th"/>
+</div>
+</div>
+</div>
+<div class="hidden p-4 rounded-xl bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-center gap-3" id="anonymousNotice">
+<span class="material-symbols-outlined text-secondary text-[22px]">info</span>
+<span>ท่านเลือกแจ้งเรื่องแบบไม่ระบุตัวตน เจ้าหน้าที่จะไม่เห็นข้อมูลชื่อและรหัสนักศึกษาของท่าน แต่ท่านยังคงสามารถติดตามสถานะผ่านรหัสติดตาม (Ticket ID) ได้ตามปกติ</span>
+</div>
+</div>
+<!-- SECTION 2: Issue Details -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-md flex flex-col gap-6">
+<div class="flex items-center gap-3 pb-2">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center font-headline-sm">
+<span class="material-symbols-outlined text-[24px]">report_problem</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">ข้อมูลปัญหาและอุปสรรค</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ระบุข้อมูลที่ชัดเจนเพื่อให้เจ้าหน้าที่ฝ่ายอาคารและเทคนิคเข้าแก้ไขได้ตรงจุด</p>
+</div>
+</div>
+<!-- Issue Categories (6 Cards Bento Matrix) -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span>หมวดหมู่ปัญหา <span class="text-error">*</span></span>
+<span class="text-outline font-body-sm text-body-sm">เลือกหมวดหมู่ที่ตรงกับปัญหามากที่สุด</span>
+</label>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="categoryGrid">
+<!-- 1. Building & Classrooms -->
+<button class="category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group" onclick="selectCategory(this)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">meeting_room</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">อาคาร &amp; ห้องเรียน</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">ประตู หน้าต่าง โต๊ะ เก้าอี้ ชำรุด</span>
+</button>
+<!-- 2. AC / Electrical / Water (Active) -->
+<button class="category-card p-4 rounded-xl bg-primary-container text-on-primary-container text-left transition-all flex flex-col gap-2 shadow-md relative overflow-hidden" onclick="selectCategory(this)" type="button">
+<span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">เลือกอยู่</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/20 text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">ac_unit</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-primary-container">แอร์ / ไฟ / ประปา</span>
+<span class="font-body-sm text-body-sm text-on-primary-container/80 leading-tight">แอร์ดับ น้ำรั่ว ท่อตัน ไฟดับ</span>
+</button>
+<!-- 3. Network & IT -->
+<button class="category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group" onclick="selectCategory(this)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">wifi</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">เน็ต &amp; ระบบไอที</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Wi-Fi มหา'ลัยช้า สัญญาณหลุด</span>
+</button>
+<!-- 4. Canteen & Sanitation -->
+<button class="category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group" onclick="selectCategory(this)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">โรงอาหาร &amp; สุขาภิบาล</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">ความสะอาด ขยะล้น กลิ่นเหม็น</span>
+</button>
+<!-- 5. Parking & Pathways -->
+<button class="category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group" onclick="selectCategory(this)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">local_parking</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">ที่จอดรถ &amp; ทางสัญจร</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">ทางเท้าชำรุด สิ่งกีดขวาง ไฟทาง</span>
+</button>
+<!-- 6. Academic Services -->
+<button class="category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group" onclick="selectCategory(this)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">local_library</span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">บริการการศึกษา</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">ห้องสมุด อุปกรณ์สื่อการสอน</span>
+</button>
+</div>
+</div>
+<!-- Urgency Level Selection -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface">ระดับความเร่งด่วน <span class="text-error">*</span></label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<button class="urgency-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-3 transition-all" onclick="selectUrgency(this, 'normal')" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-primary flex-shrink-0"></span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold">ทั่วไป (Normal)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-none">แก้ไขตามรอบปกติ</span>
+</div>
+</button>
+<button class="urgency-pill p-3 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center gap-3 shadow-sm font-semibold transition-all" onclick="selectUrgency(this, 'medium')" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary-container flex-shrink-0"></span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold">ปานกลาง (Medium)</span>
+<span class="font-body-sm text-body-sm text-on-secondary-fixed/80 leading-none">กระทบการเรียนการสอน</span>
+</div>
+</button>
+<button class="urgency-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-3 transition-all" onclick="selectUrgency(this, 'urgent')" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-error flex-shrink-0 animate-ping"></span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-error">ด่วนมาก ⚠️ (Urgent)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-none">กระทบความปลอดภัย</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Issue Title -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">
+            หัวข้อปัญหา (สรุปสั้น ๆ) <span class="text-error">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" placeholder="ระบุหัวข้อปัญหาให้กระชับและเข้าใจง่าย" type="text" value="แอร์ห้องเรียน 502 อาคาร 5 ไม่เย็น และมีน้ำหยดลงโต๊ะเรียน"/>
+</div>
+<!-- Location Fields -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">อาคาร / บริเวณ <span class="text-error">*</span></label>
+<div class="relative">
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all appearance-none pr-10">
+<option selected="" value="b5">อาคาร 5 (วิทยาการจัดการ)</option>
+<option value="b1">อาคาร 1 (เฉลิมพระเกียรติฯ)</option>
+<option value="b2">อาคาร 2 (วิทยาศาสตร์)</option>
+<option value="b3">อาคาร 3 (มนุษยศาสตร์ฯ)</option>
+<option value="b4">อาคาร 4 (ครุศาสตร์)</option>
+<option value="canteen">อาคารหอประชุมและศูนย์อาหาร</option>
+<option value="outdoor">พื้นที่กลางแจ้ง / ลานกิจกรรม / ลานจอดรถ</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">ชั้น / เลขห้อง / จุดสังเกต <span class="text-error">*</span></label>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:underline" onclick="simulateGpsTag()" type="button">
+<span class="material-symbols-outlined text-[14px]">my_location</span> ปักหมุด GPS ปัจจุบัน
+              </button>
+</div>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" id="locationDetailInput" placeholder="เช่น ชั้น 3 ห้อง 304 หรือ บันไดฝั่งทิศเหนือ" type="text" value="ชั้น 5 ห้องเรียนบรรยาย 502 (ด้านหน้ากระดาน)"/>
+</div>
+</div>
+<!-- Detailed Description -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">รายละเอียดปัญหาอย่างละเอียด <span class="text-error">*</span></label>
+<span class="font-label-sm text-label-sm text-outline" id="charCounter">134 / 500 ตัวอักษร</span>
+</div>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all resize-y" rows="4">เครื่องปรับอากาศตัวกลางห้องไม่ทำงาน มีแต่ลมร้อนออกมา และบริเวณท่อน้ำทิ้งด้านบนมีน้ำหยดลงมาใส่โต๊ะเรียนแถวที่ 2 ทำให้พื้นห้องมีน้ำขังลื่น และนักศึกษาไม่สามารถใช้งานโต๊ะในแถวดังกล่าวได้</textarea>
+</div>
+<!-- Photo Evidence Upload Dropzone -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">แนบภาพถ่ายหรือหลักฐาน (สูงสุด 5 ภาพ)</label>
+<span class="font-label-sm text-label-sm text-primary">แนบแล้ว 2 จาก 5 ภาพ</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3">
+<!-- Thumbnail 1 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square bg-surface-container shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Close up photo of an indoor university classroom air conditioning ceiling unit leaking water with visible droplets, soft daylight filtering through university lecture hall blinds, realistic documentary photo style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyMAob-8iaFdv6yWwco-Fo88pDbyHR_dCDEj95AFG_fxHpZdQmQAiBxMJ3XbB9JyjGVWskeAQGkO1TPq8rQFbX_2u_2aBW1TTaNlPTw1QoEhgJbVfQPvSUeZMbWmpHbju3YzB4B6SUAPZRIXddQnnsc94ylBPIQOBoagssRDhOHxRjb2I9iEabvn2H-yKcIsrkVOgs7v-F8eOaIMKAj2Wc5x9Mq3uCo19fLGpASp3CuteF3r3n9QNf"/>
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:scale-110 transition-transform" title="ดูภาพขยาย" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center hover:scale-110 transition-transform" title="ลบภาพ" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+<span class="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded bg-on-surface/60 text-surface-container-lowest font-label-sm text-[10px]">รูปที่ 1</span>
+</div>
+<!-- Thumbnail 2 -->
+<div class="relative group rounded-xl overflow-hidden aspect-square bg-surface-container shadow-xs">
+<img class="w-full h-full object-cover" data-alt="University classroom wooden lecture desk with water puddle on surface under fluorescent light, empty classroom seats in background, realistic student report photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JdgCPixhJVOSZMiVmwV6pfLI6CiNSw8ruwspZfRY-nrE4lwbPvsgiwUZwXJlLyE0smJEJfmX4T30TAIhsZMcn_BcCdiDnSbCHKkbSBUG5Wfh7aP7Qis97YsKUynjI067KOxuYhB8e40fXJLIGO43otjfCZqMWg8TWOwU_-098wAt_2H0GgzMcFJ7m9mANS3WAkzsPmVeM14kW_APJUJyl4QJRyl6KUmkKx9WaorBSu6AvSv2MaWm"/>
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:scale-110 transition-transform" title="ดูภาพขยาย" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center hover:scale-110 transition-transform" title="ลบภาพ" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+<span class="absolute bottom-1 left-1.5 px-1.5 py-0.5 rounded bg-on-surface/60 text-surface-container-lowest font-label-sm text-[10px]">รูปที่ 2</span>
+</div>
+<!-- Add Photo Button / Dropzone Trigger -->
+<label class="cursor-pointer aspect-square rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors flex flex-col items-center justify-center gap-1.5 text-center p-2 group">
+<input accept="image/*" class="hidden" multiple="" type="file"/>
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add_a_photo</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">+ เพิ่มภาพ</span>
+<span class="font-label-sm text-[10px] text-outline">JPG, PNG &lt; 10MB</span>
+</label>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Confirmation and Submission -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-md flex flex-col gap-6">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary accent-primary rounded-md cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            ข้าพเจ้ารับรองว่าข้อมูลรายละเอียดปัญหาข้างต้นเป็นความจริง เพื่อประโยชน์และการพัฒนาสิ่งแวดล้อมที่ดีในรั้วมหาวิทยาลัยราชภัฏธนบุรี (DRU) ยินยอมให้เจ้าหน้าที่ประสานงานเพื่อตรวจสอบข้อเท็จจริง
+          </span>
+</label>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-5 py-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-all flex items-center justify-center gap-2" onclick="confirmReset()" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+              ล้างข้อมูล
+            </button>
+<button class="w-full sm:w-auto px-5 py-3 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface hover:bg-surface-container transition-all flex items-center justify-center gap-2" onclick="saveDraftNotification()" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+              บันทึกแบบร่าง
+            </button>
+</div>
+<button class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-headline-sm text-body-md text-on-primary bg-primary hover:bg-primary-container shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold tracking-wide" onclick="submitReportSuccess()" type="button">
+<span>ส่งเรื่องแจ้งปัญหาทันที</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</form>
+<!-- RIGHT COLUMN: Sticky Sidebar Widgets (~35% -> 4 of 12 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24">
+<!-- CARD 1: Workflow Timeline / SLA -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-md flex flex-col gap-5">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">ขั้นตอนการดูแลเรื่อง</h3>
+</div>
+<div class="flex flex-col gap-4 relative">
+<!-- Item 1 -->
+<div class="flex items-start gap-3.5 relative">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-xs">
+              1
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">ยื่นเรื่องเข้าระบบ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">บันทึกข้อมูลเข้าระบบอัตโนมัติพร้อมออกรหัสติดตาม</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3.5 relative">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-xs">
+              2
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">ตรวจสอบ &amp; มอบหมายช่าง</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">เจ้าหน้าที่ฝ่ายอาคารตรวจสอบและเข้าสำรวจภายใน 24 ชม.</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3.5 relative">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-xs">
+              3
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">กำลังดำเนินการแก้ไข</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">อัปเดตสถานะและรูปภาพขณะปฏิบัติงานให้ผู้แจ้งทราบ</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-3.5 relative">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold flex-shrink-0 z-10 shadow-xs">
+              4
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">ปิดงาน &amp; ประเมินความพึงพอใจ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">สรุปการซ่อมและเปิดให้นักศึกษาให้คะแนนผลงาน</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Live Resolved Feed -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">แก้ไขสำเร็จล่าสุด</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">อัปเดตสด</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Feed Item 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary">แก้ไขแล้ว 🟢</span>
+<span class="font-label-sm text-label-sm text-outline">2 ชม. ที่แล้ว</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium line-clamp-1">ไฟส่องสว่างลานจอดรถจักรยานยนต์ติดขัด</p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span>ลานจอดรถหน้าอาคาร 3</span>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">กำลังดำเนินการ 🟡</span>
+<span class="font-label-sm text-label-sm text-outline">4 ชม. ที่แล้ว</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium line-clamp-1">สัญญาณ Wi-Fi DRU-Student ชั้น 4 ตกบ่อย</p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span>อาคาร 1 ชั้น 4</span>
+</div>
+</div>
+<!-- Feed Item 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary">แก้ไขแล้ว 🟢</span>
+<span class="font-label-sm text-label-sm text-outline">เมื่อวานนี้</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium line-clamp-1">ก๊อกน้ำห้องน้ำหญิงชั้น 2 ชำรุด น้ำรั่วซึม</p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+<span>อาคาร 2 ชั้น 2 ฝั่งทิศใต้</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center justify-center gap-1 py-2 font-label-md text-label-md text-primary font-semibold hover:underline mt-1" href="#">
+<span>ดูสถิติและรายการที่แก้ไขแล้วทั้งหมด</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- CARD 3: Emergency Hotline Helpdesk -->
+<div class="rounded-2xl p-6 bg-surface-container text-on-surface flex flex-col gap-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">ติดต่อฉุกเฉิน / Hotline</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">กรณีอุบัติเหตุหรือภัยอันตรายเร่งด่วน</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pt-1">
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">กองอาคารและสถานที่</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">02-890-1801 ต่อ 222</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity" href="tel:028901801">โทรเลย</a>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Line Official</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">@DRU-CampusCare</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-variant transition-colors" href="#">เพิ่มเพื่อน</a>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Micro-interaction script -->
+<script>
+    function setIdentityMode(isIdentified) {
+      const btnIdentified = document.getElementById('btnIdentified');
+      const btnAnonymous = document.getElementById('btnAnonymous');
+      const identityFields = document.getElementById('studentIdentityFields');
+      const anonymousNotice = document.getElementById('anonymousNotice');
+
+      if (isIdentified) {
+        btnIdentified.className = 'px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5 font-semibold';
+        btnAnonymous.className = 'px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+        identityFields.classList.remove('opacity-40', 'pointer-events-none');
+        anonymousNotice.classList.add('hidden');
+      } else {
+        btnAnonymous.className = 'px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-secondary shadow-sm flex items-center gap-1.5 font-semibold';
+        btnIdentified.className = 'px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+        identityFields.classList.add('opacity-40', 'pointer-events-none');
+        anonymousNotice.classList.remove('hidden');
+      }
+    }
+
+    function selectYear(year) {
+      const btns = document.querySelectorAll('.year-btn');
+      btns.forEach((btn, index) => {
+        if (index + 1 === year) {
+          btn.className = 'year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary-container font-semibold shadow-sm transition-all';
+        } else {
+          btn.className = 'year-btn py-2.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all';
+        }
+      });
+    }
+
+    function selectCategory(el) {
+      const cards = document.querySelectorAll('.category-card');
+      cards.forEach(card => {
+        card.className = 'category-card p-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all flex flex-col gap-2 group';
+        const badge = card.querySelector('span.absolute');
+        if (badge) badge.remove();
+        
+        const title = card.querySelector('.font-headline-sm');
+        if (title) title.className = 'font-headline-sm text-body-md font-semibold text-on-surface';
+        
+        const sub = card.querySelector('.font-body-sm');
+        if (sub) sub.className = 'font-body-sm text-body-sm text-on-surface-variant leading-tight';
+        
+        const iconWrap = card.querySelector('div');
+        if (iconWrap) iconWrap.className = 'w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform';
+      });
+
+      el.className = 'category-card p-4 rounded-xl bg-primary-container text-on-primary-container text-left transition-all flex flex-col gap-2 shadow-md relative overflow-hidden';
+      const badge = document.createElement('span');
+      badge.className = 'absolute top-2 right-2 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold';
+      badge.innerText = 'เลือกอยู่';
+      el.appendChild(badge);
+
+      const title = el.querySelector('.font-headline-sm');
+      if (title) title.className = 'font-headline-sm text-body-md font-semibold text-on-primary-container';
+      
+      const sub = el.querySelector('.font-body-sm');
+      if (sub) sub.className = 'font-body-sm text-body-sm text-on-primary-container/80 leading-tight';
+
+      const iconWrap = el.querySelector('div');
+      if (iconWrap) iconWrap.className = 'w-9 h-9 rounded-lg bg-surface-container-lowest/20 text-on-primary flex items-center justify-center';
+    }
+
+    function selectUrgency(el, level) {
+      const pills = document.querySelectorAll('.urgency-pill');
+      pills.forEach(p => {
+        p.className = 'urgency-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-3 transition-all';
+      });
+
+      if (level === 'normal') {
+        el.className = 'urgency-pill p-3 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center gap-3 shadow-sm font-semibold transition-all';
+      } else if (level === 'medium') {
+        el.className = 'urgency-pill p-3 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center gap-3 shadow-sm font-semibold transition-all';
+      } else if (level === 'urgent') {
+        el.className = 'urgency-pill p-3 rounded-xl bg-error-container text-on-error-container flex items-center gap-3 shadow-sm font-semibold transition-all';
+      }
+    }
+
+    function simulateGpsTag() {
+      const input = document.getElementById('locationDetailInput');
+      input.value = 'พิกัด GPS: อาคาร 5 ชั้น 5 โซนทิศตะวันออก (13.7314° N, 100.4891° E)';
+      input.classList.add('bg-primary-fixed-dim/20');
+      setTimeout(() => input.classList.remove('bg-primary-fixed-dim/20'), 1500);
+    }
+
+    function confirmReset() {
+      if (confirm('คุณต้องการรีเซ็ตข้อมูลในแบบฟอร์มทั้งหมดหรือไม่?')) {
+        document.getElementById('issueReportForm').reset();
+      }
+    }
+
+    function saveDraftNotification() {
+      alert('บันทึกแบบร่างไว้ในเบราว์เซอร์เรียบร้อยแล้ว ท่านสามารถกลับมาเขียนต่อได้ทุกเมื่อ');
+    }
+
+    function submitReportSuccess() {
+      alert('ส่งเรื่องแจ้งปัญหาเรียบร้อยแล้ว!\nรหัสติดตามเรื่อง: DRU-2025-08941\nระบบได้ส่ง SMS ยืนยันไปยังเบอร์โทรศัพท์ของท่านแล้ว');
+    }
+  </script>
+</div></div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-auto"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded-md bg-primary-container flex items-center justify-center text-on-primary text-[14px]"><span class="material-symbols-outlined text-[16px]">school</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 มหาวิทยาลัยราชภัฏธนบุรี (DRU) • ฝ่ายกิจการนักศึกษาและระบบรับเรื่องร้องเรียน</span></div><div class="flex items-center gap-space-md"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">ระเบียบการใช้งาน</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">นโยบายความเป็นส่วนตัว</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">ติดต่อผู้ดูแลระบบ</a></div></div></footer>
+<script>
+(function(){
+ const originalMain = document.querySelector('main').innerHTML;
+ const originalTitle = document.title;
+ const pageNames = {home:'หน้าแรก', 'report-issue':'แจ้งปัญหา','track-status':'ติดตามสถานะ','analytics-and-resolved':'สถิติ & ปัญหาที่แก้ไขแล้ว'};
+ function card(title,desc,icon,extra=''){return `<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100"><div class="flex items-start gap-3"><div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center"><span class="material-symbols-outlined">${icon}</span></div><div class="flex-1"><h2 class="text-xl font-bold mb-1">${title}</h2><p class="text-slate-500 text-sm">${desc}</p>${extra}</div></div></section>`}
+ function pageContent(path){
+  if(path==='report-issue') return originalMain;
+  if(path==='home') return `<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-8 space-y-8">
+   <section class="rounded-3xl p-8 md:p-12 text-white shadow-xl" style="background:linear-gradient(125deg,#006948,#00855d,#10b981)">
+   <span class="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm mb-5">DRU Campus Care · ระบบดูแลนักศึกษา</span>
+   <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">ทุกปัญหาในรั้วมหาวิทยาลัย<br><span style="color:#ffddb8">เราอยากรับฟังและช่วยแก้ไข</span></h1>
+   <p class="max-w-2xl text-white/90 mb-6">แจ้งปัญหา ติดตามความคืบหน้า และตรวจสอบผลการดำเนินงานได้ในที่เดียว</p>
+   <button onclick="navigate('report-issue')" class="rounded-xl bg-white text-emerald-800 font-bold px-6 py-3">＋ แจ้งปัญหาใหม่</button></section>
+   <div class="grid md:grid-cols-3 gap-5">${card('แจ้งปัญหาใหม่','ส่งเรื่องร้องเรียนหรือข้อเสนอแนะ','add_circle','<button class="mt-4 font-semibold text-emerald-700" onclick="navigate(\\'report-issue\\')">เริ่มแจ้งเรื่อง →</button>')}${card('ติดตามสถานะ','ตรวจสอบความคืบหน้าด้วยรหัส Ticket ID','track_changes','<button class="mt-4 font-semibold text-emerald-700" onclick="navigate(\\'track-status\\')">ติดตามเรื่อง →</button>')}${card('สถิติการแก้ไข','ดูภาพรวมเรื่องที่รับแจ้งและแก้ไขแล้ว','bar_chart','<button class="mt-4 font-semibold text-emerald-700" onclick="navigate(\\'analytics-and-resolved\\')">ดูสถิติ →</button>')}</div>
+   <div class="grid lg:grid-cols-2 gap-5">${card('ขั้นตอนการดูแลเรื่อง','รับเรื่อง → ตรวจสอบ → ประสานงาน → ดำเนินการแก้ไข','conversion_path','<ol class="mt-4 list-decimal pl-5 space-y-2 text-sm text-slate-600"><li>ส่งรายละเอียดปัญหาและตำแหน่ง</li><li>เจ้าหน้าที่ตรวจสอบข้อมูลเบื้องต้น</li><li>ประสานหน่วยงานที่เกี่ยวข้อง</li><li>แจ้งผลการดำเนินการให้ผู้แจ้งทราบ</li></ol>')}${card('ติดต่อฉุกเฉิน','กรณีอุบัติเหตุหรือเหตุเร่งด่วน','support_agent','<p class="mt-4 font-bold">กองอาคารและสถานที่</p><a class="text-emerald-700 font-semibold" href="tel:028901801">02-890-1801 ต่อ 222 · โทรเลย</a>')}</div></div>`;
+  if(path==='track-status') return `<div class="max-w-5xl mx-auto px-4 md:px-8 py-10 space-y-6"><div><p class="text-emerald-700 font-bold text-sm">DRU CAMPUS CARE</p><h1 class="text-3xl font-extrabold mt-2">ติดตามสถานะเรื่องแจ้ง</h1><p class="text-slate-500 mt-2">กรอกรหัส Ticket ID ที่ได้รับหลังส่งเรื่อง เพื่อดูความคืบหน้า</p></div>
+   <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100"><form id="trackForm" class="flex flex-col sm:flex-row gap-3"><input id="ticketInput" required placeholder="เช่น DRU-2026-00001" class="flex-1 border border-slate-200 bg-slate-50 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-200"/><button class="bg-emerald-700 text-white rounded-xl px-6 py-3 font-bold">ค้นหาสถานะ</button></form><div id="trackResult" class="hidden mt-6"></div></section>
+   ${card('ข้อควรรู้','รหัสติดตามเป็นข้อมูลที่ใช้ค้นหาเรื่องของคุณ โปรดเก็บรหัสไว้และอย่าเผยแพร่ให้ผู้อื่น','info','<p class="mt-3 text-sm text-slate-600">ตัวอย่างรหัส: DRU-2026-00001 (ข้อมูลตัวอย่างสำหรับสาธิต)</p>')}</div>`;
+  return `<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-10 space-y-7"><div><p class="text-emerald-700 font-bold text-sm">DRU CAMPUS CARE</p><h1 class="text-3xl font-extrabold mt-2">สถิติ & ปัญหาที่แก้ไขแล้ว</h1><p class="text-slate-500 mt-2">ภาพรวมตัวอย่างสำหรับแสดงผลระบบรับเรื่องร้องเรียน</p></div>
+   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">${[['1,284','เรื่องที่รับแจ้ง','assignment'],['1,096','แก้ไขแล้ว','task_alt'],['142','กำลังดำเนินการ','pending_actions'],['46','รอตรวจสอบ','hourglass_top']].map(x=>`<section class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100"><span class="material-symbols-outlined text-emerald-700">${x[2]}</span><p class="text-3xl font-extrabold mt-3">${x[0]}</p><p class="text-sm text-slate-500 mt-1">${x[1]}</p></section>`).join('')}</div>
+   <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100"><h2 class="text-xl font-bold mb-4">รายการที่แก้ไขแล้วล่าสุด</h2><div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead><tr class="text-slate-500 border-b"><th class="py-3 pr-4">รหัสเรื่อง</th><th class="py-3 pr-4">รายละเอียด</th><th class="py-3 pr-4">สถานที่</th><th class="py-3">สถานะ</th></tr></thead><tbody>${[['DRU-2026-00124','ไฟส่องสว่างทางเดินชำรุด','อาคาร 1 ชั้น 4'],['DRU-2026-00119','ก๊อกน้ำห้องน้ำรั่วซึม','อาคาร 2 ชั้น 2'],['DRU-2026-00103','เครื่องปรับอากาศไม่เย็น','อาคาร 5 ห้อง 503']].map(x=>`<tr class="border-b last:border-0"><td class="py-4 pr-4 font-semibold text-emerald-700">${x[0]}</td><td class="py-4 pr-4">${x[1]}</td><td class="py-4 pr-4 text-slate-500">${x[2]}</td><td class="py-4"><span class="rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 font-semibold">แก้ไขแล้ว</span></td></tr>`).join('')}</tbody></table></div></section></div>`;
+ }
+ window.navigate=function(path){
+  if(!pageNames[path]) path='home';
+  document.querySelector('main').innerHTML=pageContent(path);
+  document.querySelectorAll('[data-path]').forEach(a=>{
+   const active=a.dataset.path===path;
+   a.classList.toggle('bg-primary-container',active); a.classList.toggle('text-on-primary-container',active);
+   a.classList.toggle('font-semibold',active);
+   if(active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+  document.title=pageNames[path]+' | '+originalTitle;
+  history.replaceState({path},'', '#'+path);
+  if(path==='track-status'){
+   document.getElementById('trackForm').addEventListener('submit',e=>{
+    e.preventDefault(); const id=document.getElementById('ticketInput').value.trim().toUpperCase();
+    const result=document.getElementById('trackResult'); result.classList.remove('hidden');
+    result.innerHTML=`<div class="rounded-xl bg-emerald-50 p-5"><p class="font-bold text-emerald-800">ผลการค้นหา: ${id.replace(/[&<>"]/g,'')}</p><p class="text-sm text-slate-600 mt-2">โหมดสาธิต: ไม่พบข้อมูลจากฐานข้อมูลจริง หากเป็นเรื่องที่ส่งในระบบจริง โปรดตรวจสอบรหัส Ticket ID อีกครั้ง</p></div>`;
+   });
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+ };
+ document.addEventListener('click',e=>{
+  const a=e.target.closest('a[data-path]'); if(a){e.preventDefault();navigate(a.dataset.path);}
+ });
+ const start=location.hash.replace('#','');
+ if(pageNames[start] && start!=='report-issue') navigate(start);
+})();
+</script>
+</body></html>
