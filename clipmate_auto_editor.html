@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLIPMATE — Auto Video Editor</title>
+<style>
+:root{--bg:#0b0d12;--panel:#141821;--panel2:#1b2230;--line:#293244;--text:#f4f6fb;--muted:#9aa6b8;--red:#ff435d;--cyan:#54d6e8}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#24203a 0,#0b0d12 38%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:22px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
+.logo{font-weight:950;letter-spacing:2px;font-size:22px}.logo span{color:var(--red)}.tag{color:var(--muted);font-size:12px}
+main{max-width:1180px;margin:auto;padding:26px 18px 60px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.hero h1{font-size:clamp(26px,4vw,42px);margin:0 0 6px}.hero p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.panel{background:linear-gradient(145deg,#171d28,#11151d);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 14px 40px #0003}.panel h2{font-size:17px;margin:0 0 14px}
+.drop{border:1.5px dashed #536078;border-radius:15px;padding:28px 14px;text-align:center;background:#ffffff04;cursor:pointer;transition:.2s}.drop:hover,.drop.drag{border-color:var(--cyan);background:#54d6e80b}.drop strong{display:block;font-size:16px;margin:8px}.drop small{color:var(--muted)}
+input[type=file]{display:none}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;cursor:pointer;color:white;background:var(--red)}.btn.secondary{background:#293244}.btn.cyan{background:#167b8c}.btn:disabled{opacity:.45;cursor:not-allowed}
+.filelist{display:grid;gap:8px;margin-top:14px}.file{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--panel2);border-radius:10px;font-size:13px}.file span:last-child{color:var(--muted);white-space:nowrap}
+.preview{width:100%;max-height:330px;background:#050608;border-radius:13px;aspect-ratio:16/9;object-fit:contain}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.field select,.field input[type=text],.field input[type=number]{width:100%;background:#0d121a;color:white;border:1px solid var(--line);border-radius:9px;padding:11px}
+.check{display:flex;gap:9px;align-items:center;color:#d7deea;font-size:13px;margin:12px 0}.check input{accent-color:var(--red);width:17px;height:17px}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.progress{height:8px;background:#252d3b;border-radius:99px;overflow:hidden;margin-top:14px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--cyan));transition:width .2s}.status{font-size:12px;color:var(--muted);margin-top:8px;min-height:18px}
+.note{font-size:12px;color:var(--muted);line-height:1.65;margin-top:14px}.timeline{margin-top:18px;padding:14px;background:#0d121a;border-radius:12px}.track{height:12px;display:flex;gap:3px;margin-top:10px}.seg{flex:1;border-radius:4px;background:linear-gradient(90deg,#ff435d,#a64cff)}.empty{color:var(--muted);font-size:13px;text-align:center;padding:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.hero{display:block}.tag{display:none}.controls{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo">CLIP<span>MATE</span></div><div class="tag">DROP CLIPS · AUTO EDIT · EXPORT</div></header>
+<main>
+ <div class="hero"><div><h1>ตัดคลิปให้จบในไม่กี่คลิก</h1><p>โยนวิดีโอเข้ามา เลือกสไตล์ แล้วให้ระบบเรียงคลิปและตัดต่อให้อัตโนมัติ</p></div></div>
+ <div class="grid">
+  <section class="panel">
+   <h2>01 / เพิ่มวิดีโอ</h2>
+   <label class="drop" id="drop">
+    <div style="font-size:30px">＋</div><strong>แตะเพื่อเลือก หรือ ลากคลิปมาวาง</strong><small>รองรับ MP4, MOV, WEBM · เลือกได้หลายไฟล์</small>
+    <input id="files" type="file" accept="video/*" multiple>
+   </label>
+   <div class="filelist" id="filelist"><div class="empty">ยังไม่มีวิดีโอ — เพิ่มคลิปเพื่อเริ่มตัดต่อ</div></div>
+   <div class="timeline"><strong style="font-size:13px">ไทม์ไลน์ตัวอย่าง</strong><div class="track" id="track"></div><div class="note" id="duration">ยังไม่มีคลิปในไทม์ไลน์</div></div>
+  </section>
+  <section class="panel">
+   <h2>02 / ตั้งค่างานตัดต่อ</h2>
+   <video class="preview" id="preview" controls playsinline></video>
+   <div class="controls" style="margin-top:15px">
+    <div class="field"><label>รูปแบบวิดีโอ</label><select id="ratio"><option value="9:16">แนวตั้ง 9:16 (TikTok / Reels)</option><option value="16:9">แนวนอน 16:9 (YouTube)</option><option value="1:1">จัตุรัส 1:1</option></select></div>
+    <div class="field"><label>ความยาวคลิปสุดท้าย</label><select id="length"><option value="15">ประมาณ 15 วินาที</option><option value="30" selected>ประมาณ 30 วินาที</option><option value="45">ประมาณ 45 วินาที</option><option value="60">ประมาณ 60 วินาที</option></select></div>
+    <div class="field"><label>สไตล์การตัด</label><select id="style"><option value="fast">จังหวะไว / คัตถี่</option><option value="smooth" selected>สมูท / เล่าเรื่อง</option><option value="random">ไดนามิก / สลับช็อต</option></select></div>
+    <div class="field"><label>เสียงต้นฉบับ</label><select id="audio"><option value="keep">เก็บเสียงคลิป</option><option value="mute">ปิดเสียงคลิป</option></select></div>
+   </div>
+   <label class="check"><input type="checkbox" id="fade" checked> ใส่เอฟเฟกต์เฟดเข้า–ออก</label>
+   <label class="check"><input type="checkbox" id="captions"> เว้นพื้นที่ด้านล่างสำหรับซับไตเติล</label>
+   <div class="actions"><button class="btn" id="edit" disabled>✦ ตัดต่ออัตโนมัติ</button><button class="btn secondary" id="clear" disabled>ล้างคลิป</button></div>
+   <div class="progress"><div class="bar" id="bar"></div></div><div class="status" id="status">เพิ่มวิดีโอเพื่อเริ่มต้น</div>
+   <div class="actions"><button class="btn cyan" id="export" disabled>↓ ส่งออกวิดีโอ MP4</button></div>
+   <div class="note">ระบบจะเลือกช่วงจากแต่ละไฟล์มาต่อเป็นคลิปเดียวโดยอัตโนมัติ การประมวลผลวิดีโอเกิดขึ้นในเบราว์เซอร์ และอาจใช้เวลานานตามขนาดไฟล์/ความแรงเครื่อง</div>
+  </section>
+ </div>
+ <p class="note">หมายเหตุ: เวอร์ชันนี้ทำ Auto-cut และรวมคลิปพร้อมเฟดได้ ยังไม่สามารถฟังเสียงเพื่อถอดคำพูดเป็นซับอัตโนมัติ หรือวิเคราะห์ช็อตสำคัญแบบ AI ได้ หากต้องการสองฟังก์ชันนี้ต้องเชื่อมระบบถอดเสียง/AI เพิ่มเติม แนะนำใช้ Chrome หรือ Edge บนคอมพิวเตอร์สำหรับไฟล์ใหญ่</p>
+</main>
+<script type="module">
+import { FFmpeg } from 'https://unpkg.com/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js';
+import { fetchFile, toBlobURL } from 'https://unpkg.com/@ffmpeg/util@0.12.1/dist/esm/index.js';
+const $=id=>document.getElementById(id);
+const ffmpeg=new FFmpeg(); let loaded=false, clips=[], outputUrl=null, edited=false;
+const fmt=s=>{if(!Number.isFinite(s))return '—';let m=Math.floor(s/60),sec=Math.floor(s%60);return `${m}:${String(sec).padStart(2,'0')}`};
+function status(t,p){$('status').textContent=t;if(p!==undefined)$('bar').style.width=p+'%'}
+async function loadFF(){if(loaded)return;status('กำลังโหลดตัวประมวลผลวิดีโอ…',4);const base='https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd';await ffmpeg.load({coreURL:await toBlobURL(base+'/ffmpeg-core.js','text/javascript'),wasmURL:await toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')});loaded=true}
+function render(){ $('filelist').innerHTML='';$('track').innerHTML='';if(!clips.length){$('filelist').innerHTML='<div class="empty">ยังไม่มีวิดีโอ — เพิ่มคลิปเพื่อเริ่มตัดต่อ</div>';$('duration').textContent='ยังไม่มีคลิปในไทม์ไลน์';}
+clips.forEach((c,i)=>{let d=document.createElement('div');d.className='file';d.innerHTML=`<span>${i+1}. ${c.file.name.replace(/[<>&"]/g,'')}</span><span>${fmt(c.duration)}</span>`;$('filelist').append(d);let s=document.createElement('div');s.className='seg';s.title=c.file.name;$('track').append(s)});
+$('edit').disabled=!clips.length;$('clear').disabled=!clips.length;$('duration').textContent=clips.length?`${clips.length} ไฟล์ · รวมต้นฉบับ ${fmt(clips.reduce((a,c)=>a+c.duration,0))}`:'ยังไม่มีคลิปในไทม์ไลน์'}
+async function addFiles(list){for(const file of list){if(!file.type.startsWith('video/'))continue;let url=URL.createObjectURL(file),v=document.createElement('video');v.preload='metadata';v.src=url;await new Promise(r=>{v.onloadedmetadata=r;v.onerror=r});if(Number.isFinite(v.duration)&&v.duration>0)clips.push({file,duration:v.duration,url});else URL.revokeObjectURL(url)}render();if(clips[0])$('preview').src=clips[0].url;status('เพิ่มคลิปแล้ว พร้อมตัดต่อ',0)}
+$('drop').addEventListener('click',e=>{if(e.target.tagName!=='INPUT')$('files').click()});
+$('files').addEventListener('change',e=>addFiles(e.target.files));
+$('drop').addEventListener('dragover',e=>{e.preventDefault();$('drop').classList.add('drag')});
+$('drop').addEventListener('dragleave',()=>$('drop').classList.remove('drag'));
+$('drop').addEventListener('drop',e=>{e.preventDefault();$('drop').classList.remove('drag');addFiles(e.dataTransfer.files)});
+$('clear').onclick=()=>{clips.forEach(c=>URL.revokeObjectURL(c.url));clips=[];if(outputUrl)URL.revokeObjectURL(outputUrl);outputUrl=null;edited=false;$('preview').removeAttribute('src');$('export').disabled=true;render();status('ล้างรายการแล้ว',0)};
+$('edit').onclick=async()=>{if(!clips.length)return;$('edit').disabled=true;$('export').disabled=true;try{await loadFF();let target=Number($('length').value),style=$('style').value;let order=[...clips];if(style==='random')order.sort(()=>Math.random()-.5);let per=Math.max(2,target/order.length),selected=[],left=target;
+for(let i=0;i<order.length&&left>0;i++){let c=order[i],dur=Math.min(left,per);if(style==='fast')dur=Math.min(left,Math.max(2,per*.65));if(style==='smooth')dur=Math.min(left,per);let start=Math.max(0,(c.duration-dur)/2);selected.push({c,dur,start});left-=dur}
+if(left>0){for(let i=0;i<selected.length&&left>0;i++){let add=Math.min(left,Math.max(0,selected[i].c.duration-selected[i].dur));selected[i].dur+=add;left-=add}}
+let ratio=$('ratio').value,scale=ratio==='9:16'?'1080:1920':ratio==='1:1'?'1080:1080':'1920:1080';let inputs=[];
+for(let i=0;i<selected.length;i++){let s=selected[i],name=`in${i}.mp4`;await ffmpeg.writeFile(name,await fetchFile(s.c.file));inputs.push({name,...s});status(`กำลังเตรียมคลิป ${i+1}/${selected.length}`,8+Math.round(45*(i+1)/selected.length))}
+let args=[];inputs.forEach(x=>args.push('-ss',String(x.start),'-t',String(x.dur),'-i',x.name));
+let filters=inputs.map((x,i)=>`[${i}:v]scale=${scale.split(':')[0]}:${scale.split(':')[1]}:force_original_aspect_ratio=decrease,pad=${scale.split(':')[0]}:${scale.split(':')[1]}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=30${$('fade').checked?`,fade=t=in:st=0:d=0.25,fade=t=out:st=${Math.max(0,x.dur-.25)}:d=0.25`:''}[v${i}]`).join(';');
+let audio=$('audio').value==='mute'?'':inputs.map((x,i)=>`[${i}:a]aresample=44100[a${i}]`).join(';');
+let concat=inputs.map((x,i)=>`[v${i}]`).join('')+'concat=n='+inputs.length+':v=1:a=0[outv]';
+let graph=filters+';'+concat;
+let map=['-map','[outv]'];if(audio){graph+=';'+inputs.map((x,i)=>`[a${i}]`).join('')+'concat=n='+inputs.length+':v=0:a=1[outa]';map.push('-map','[outa]')}else map.push('-an');
+await ffmpeg.exec([...args,'-filter_complex',graph,...map,'-c:v','libx264','-preset','ultrafast','-crf','23','-pix_fmt','yuv420p',...(audio?['-c:a','aac']:[]),'-movflags','+faststart','final.mp4']);
+let data=await ffmpeg.readFile('final.mp4');if(outputUrl)URL.revokeObjectURL(outputUrl);outputUrl=URL.createObjectURL(new Blob([data.buffer],{type:'video/mp4'}));$('preview').src=outputUrl;$('preview').load();$('export').disabled=false;edited=true;status('ตัดต่อเสร็จแล้ว! กดส่งออกเพื่อบันทึก MP4',100);
+}catch(e){console.error(e);status('ตัดต่อไม่สำเร็จ: '+(e.message||'ลองลดขนาด/จำนวนคลิป หรือใช้ Chrome บนคอมพิวเตอร์'),0)}finally{$('edit').disabled=!clips.length}}
+$('export').onclick=()=>{if(!outputUrl)return;let a=document.createElement('a');a.href=outputUrl;a.download='clipmate-edited.mp4';a.click()};
+</script>
+</body></html>
